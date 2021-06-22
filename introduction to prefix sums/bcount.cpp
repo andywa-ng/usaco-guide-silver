@@ -10,7 +10,7 @@ int main() {
 
     int h[n+1], g[n+1], j[n+1];
     h[0] = g[0] = j[0] = 0;
-    for (int i = 1; i < n + 1; i++) {
+    for (int i = 1; i <= n; i++) {
         fin >> temp;
         if (temp == 1) {
             h[i] = h[i-1] + 1;

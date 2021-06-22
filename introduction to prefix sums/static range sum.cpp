@@ -7,7 +7,7 @@ int main() {
 
     long long temp, prefix[n+1];
     prefix[0] = 0;
-    for (int i = 1; i < n + 1; i++) {
+    for (int i = 1; i <= n; i++) {
         cin >> temp;
         prefix[i] = prefix[i-1] + temp;
     } 
