@@ -1,11 +1,12 @@
 class Solution {
     public:
         int pivotIndex(vector<int>& nums) {
-            int n = nums.size();
-            int left = 0, right = 0;
+            int n = nums.size(), right = 0;
             for (int i = 0; i < n; i++) {
                 right += nums[i];
             }
+            
+            int left = 0;
             for (int i = 0; i < n; i++) {
                 right -= nums[i];
                 if (left == right) {

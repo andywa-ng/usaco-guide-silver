@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int n, q, l, r;
+    int n, q;
     cin >> n >> q;
 
     long long temp, prefix[n+1];
@@ -12,10 +12,10 @@ int main() {
         prefix[i] = prefix[i-1] + temp;
     } 
 
+    int l, r;
     for (int i = 0; i < q; i++) {
         cin >> l >> r;
         cout << prefix[r] - prefix[l] << '\n';
     }
-
     return 0;
 }
