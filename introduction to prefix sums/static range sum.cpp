@@ -5,8 +5,7 @@ int main() {
     int n, q;
     cin >> n >> q;
 
-    long long temp, prefix[n+1];
-    prefix[0] = 0;
+    long long temp, prefix[n+1] = {};
     for (int i = 1; i <= n; i++) {
         cin >> temp;
         prefix[i] = prefix[i-1] + temp;

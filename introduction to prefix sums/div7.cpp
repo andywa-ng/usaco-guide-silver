@@ -8,15 +8,13 @@ int main() {
     int n;
     fin >> n;
 
-    int first[7];
-    first[0] = 0;
+    int first[7] = {};
     for (int i = 1; i < 7; i++) {
         first[i] = -1;
     }
 
     int temp, sum = 0, result = 0;
-    for (int i = 1; i <= n ; i++) {
-        cout << i << '\n';
+    for (int i = 1; i <= n; i++) {
         fin >> temp;
         sum = (sum + temp) % 7;
         if (first[sum] == -1) {

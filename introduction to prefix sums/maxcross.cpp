@@ -8,24 +8,20 @@ int main() {
     int n, k, b;
     fin >> n >> k >> b;
 
-    bool broken[n];
-    for (int i = 0; i < n; i++) {
-        broken[i] = false;
-    }
     int temp;
+    bool broken[n] = {};
     for (int i = 0; i < b; i++) {
         fin >> temp;
         broken[temp-1] = true;
     }
 
-    int prefix[n+1];
-    prefix[0] = 0;
-    for (int i = 1; i <= n ; i++) {
+    int prefix[n+1] = {};
+    for (int i = 1; i <= n; i++) {
         prefix[i] = prefix[i-1] + broken[i-1];
     }
 
     int result = 1e5;
-    for (int i = k; i <= n ; i++) {
+    for (int i = k; i <= n; i++) {
         result = min(result, prefix[i] - prefix[i-k]);
     }
 

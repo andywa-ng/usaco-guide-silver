@@ -13,7 +13,8 @@ class Solution {
                     return i;
                 }
                 left += nums[i];
-            } 
+            }
+            
             return -1;
         }
 };

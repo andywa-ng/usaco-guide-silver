@@ -8,22 +8,18 @@ int main() {
     int n, q;
     fin >> n >> q;
 
-    int temp, h[n+1], g[n+1], j[n+1];
-    h[0] = g[0] = j[0] = 0;
+    int h[n+1] = {}, g[n+1] = {}, j[n+1] = {}, temp;
     for (int i = 1; i <= n; i++) {
+        h[i] = h[i-1];
+        g[i] = g[i-1];
+        j[i] = j[i-1];
         fin >> temp;
         if (temp == 1) {
-            h[i] = h[i-1] + 1;
-            g[i] = g[i-1];
-            j[i] = j[i-1];
+            h[i]++;
         } else if (temp == 2) {
-            h[i] = h[i-1];
-            g[i] = g[i-1] + 1;
-            j[i] = j[i-1];
+            g[i]++;
         } else {
-            h[i] = h[i-1];
-            g[i] = g[i-1];
-            j[i] = j[i-1] + 1;
+            j[i]++;
         } 
     } 
 
